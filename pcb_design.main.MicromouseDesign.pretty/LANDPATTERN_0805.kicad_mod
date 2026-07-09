@@ -1,0 +1,39 @@
+(footprint LANDPATTERN_0805 (version 20221018) (generator jitx) (layer F.Cu) (tstamp f6b6e64b-d3f8-35c2-b7f6-10a4941de7b5)   
+  (pad 0 smd custom
+    (at 0.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.6 -0.5) (xy -0.6 -0.5) (xy -0.6 0.5) (xy 0.6 0.5)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 1557a9e0-9a69-ab43-ec45-33d633064444))
+  (pad 1 smd custom
+    (at 1.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.6 -0.5) (xy -0.6 -0.5) (xy -0.6 0.5) (xy 0.6 0.5)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 4c781cfc-5945-b4cc-bf5d-1121b03bff1e))
+  (pad 2 smd custom
+    (at 2.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.6 -0.5) (xy -0.6 -0.5) (xy -0.6 0.5) (xy 0.6 0.5)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 26711a6d-00e2-692a-3dd6-60488deb2009))  
+  (fp_text reference ">REF" (at 0.0 0.0 0.0) (layer F.SilkS) hide 
+    (effects (font (size 1.0 1.0) (thickness 0.10)) )
+    (tstamp b52c4e6a-ce71-9842-5b1a-235aa185856b)
+    )
+  (fp_text value ">VALUE" (at 0.0 0.0 0.0) (layer F.SilkS) hide 
+    (effects (font (size 1.0 1.0) (thickness 0.10)) )
+    (tstamp 932a0ff7-971c-7c13-bcc6-a15cbef6a231)
+    ))

@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name pcb_design.main.MicromouseDesign)(type KiCad)(uri "$(KIPRJMOD)/pcb_design.main.MicromouseDesign.pretty")(options "")(descr ""))
+)

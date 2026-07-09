@@ -1,0 +1,219 @@
+(footprint LANDPATTERN_HTSSOP20 (version 20221018) (generator jitx) (layer F.Cu) (tstamp b1447960-a289-f909-bc3d-a25739a3b4ec)   
+  (pad 0 smd custom
+    (at 0.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 5a1040bf-12a8-33ba-c804-feb8502c39ad))
+  (pad 1 smd custom
+    (at 1.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp a0d1ff24-9b90-c83d-78ad-c9db23283eb3))
+  (pad 2 smd custom
+    (at 2.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 5e90d8df-f40b-6013-c71f-3ae8999f981f))
+  (pad 3 smd custom
+    (at 3.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp c6157f9c-44ca-da81-1daa-47e3ba74c635))
+  (pad 4 smd custom
+    (at 4.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 175aa4f3-2875-efe8-8c17-15c09d3b37ed))
+  (pad 5 smd custom
+    (at 5.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 1b4080fb-e0a2-25bf-38b8-3173f71aa636))
+  (pad 6 smd custom
+    (at 6.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 6e4419c0-2781-c905-bea3-e8043077be97))
+  (pad 7 smd custom
+    (at 7.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp c8911588-26e2-4c63-2d88-df5c5d50deca))
+  (pad 8 smd custom
+    (at 8.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 78fd49a4-ddab-d917-f11c-59d4f71c4d72))
+  (pad 9 smd custom
+    (at 9.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 01e16426-8b3f-fbee-2366-1c6e878672b5))
+  (pad 10 smd custom
+    (at 10.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 87a8a8c8-4ace-797f-d669-642d7702a222))
+  (pad 11 smd custom
+    (at 11.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 89eb57a9-fbeb-bf58-4307-f9c0d0cd595f))
+  (pad 12 smd custom
+    (at 12.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 9b32b423-179c-aeec-08c5-da58cc7ddac5))
+  (pad 13 smd custom
+    (at 13.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 888d2d63-7470-29cb-8782-e62daf885ab0))
+  (pad 14 smd custom
+    (at 14.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp f356c74c-3218-235d-7a18-4973b934a9d2))
+  (pad 15 smd custom
+    (at 15.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp fecd17ab-53ee-98a9-3883-29d7c0cf3b76))
+  (pad 16 smd custom
+    (at 16.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp e8c6c9ab-5523-0599-9040-13c67726f508))
+  (pad 17 smd custom
+    (at 17.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 9593eac8-b957-2260-91b4-eb8ce2c7ff9f))
+  (pad 18 smd custom
+    (at 18.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp a9fa2dbc-f796-e731-86ff-4b0e3cf86578))
+  (pad 19 smd custom
+    (at 19.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp cced5a1d-af05-da13-a43b-9c917873cafd))
+  (pad 20 smd custom
+    (at 20.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.75 -0.2) (xy -0.75 -0.2) (xy -0.75 0.2) (xy 0.75 0.2)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 7659beb6-6468-00b5-62a0-95cdea9f0cbc))  
+  (fp_text reference ">REF" (at 0.0 0.0 0.0) (layer F.SilkS) hide 
+    (effects (font (size 1.0 1.0) (thickness 0.10)) )
+    (tstamp 337a1835-0447-6ee7-aa48-ca3c487a2d26)
+    )
+  (fp_text value ">VALUE" (at 0.0 0.0 0.0) (layer F.SilkS) hide 
+    (effects (font (size 1.0 1.0) (thickness 0.10)) )
+    (tstamp 55947bfb-b41a-2541-786b-51b4394bcd8b)
+    ))

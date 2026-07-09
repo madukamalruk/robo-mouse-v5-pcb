@@ -1,0 +1,21 @@
+(footprint LANDPATTERN_MOUNTINGHOLE_M2 (version 20221018) (generator jitx) (layer F.Cu) (tstamp 69e179d1-68c8-453b-293d-e81eed62b173)   
+  (pad 0 thru_hole circle
+    (at 0.0 0.0 0.0)
+    (size 4.0 4.0)
+    (drill 2.2)
+    (layers *.Cu )
+    (tstamp 17f8cf5c-399f-fd35-5dd9-9b80a7c50816))
+  (pad 1 thru_hole circle
+    (at 1.0 0.0 0.0)
+    (size 4.0 4.0)
+    (drill 2.2)
+    (layers *.Cu )
+    (tstamp 3b880b46-26f2-f9cf-3b49-101a3932535d))  
+  (fp_text reference ">REF" (at 0.0 0.0 0.0) (layer F.SilkS) hide 
+    (effects (font (size 1.0 1.0) (thickness 0.10)) )
+    (tstamp 2687e687-be23-81e2-d8d7-731bda508846)
+    )
+  (fp_text value ">VALUE" (at 0.0 0.0 0.0) (layer F.SilkS) hide 
+    (effects (font (size 1.0 1.0) (thickness 0.10)) )
+    (tstamp facd71d1-4424-4d9f-4bb0-15eefee4f9b3)
+    ))

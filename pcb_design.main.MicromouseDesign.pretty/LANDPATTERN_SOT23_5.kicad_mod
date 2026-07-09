@@ -1,0 +1,69 @@
+(footprint LANDPATTERN_SOT23_5 (version 20221018) (generator jitx) (layer F.Cu) (tstamp e5ec7200-be8e-0ebc-e38d-76a021bad9d2)   
+  (pad 0 smd custom
+    (at 0.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.5 -0.3) (xy -0.5 -0.3) (xy -0.5 0.3) (xy 0.5 0.3)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 436a9b18-ade0-9014-8c3c-dca9c31c3408))
+  (pad 1 smd custom
+    (at 1.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.5 -0.3) (xy -0.5 -0.3) (xy -0.5 0.3) (xy 0.5 0.3)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 631e2738-0137-df26-e03e-81b4d97934ba))
+  (pad 2 smd custom
+    (at 2.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.5 -0.3) (xy -0.5 -0.3) (xy -0.5 0.3) (xy 0.5 0.3)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 607ff255-619a-b731-e58d-33aeaa396b32))
+  (pad 3 smd custom
+    (at 3.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.5 -0.3) (xy -0.5 -0.3) (xy -0.5 0.3) (xy 0.5 0.3)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 21add8b8-0982-f06d-e54d-54725ca6778c))
+  (pad 4 smd custom
+    (at 4.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.5 -0.3) (xy -0.5 -0.3) (xy -0.5 0.3) (xy 0.5 0.3)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 1ffa0395-947d-3ba3-4180-0e70924490a2))
+  (pad 5 smd custom
+    (at 5.0 0.0 0.0)
+    (size 0.01 0.01)
+    (options (clearance outline) (anchor circle))
+    (primitives
+      (gr_poly (pts (xy 0.5 -0.3) (xy -0.5 -0.3) (xy -0.5 0.3) (xy 0.5 0.3)) (width 0) (fill yes)
+      )
+    )
+    (layers F.Cu)
+    (tstamp 0157c087-05e4-70df-4416-40160cf6b243))  
+  (fp_text reference ">REF" (at 0.0 0.0 0.0) (layer F.SilkS) hide 
+    (effects (font (size 1.0 1.0) (thickness 0.10)) )
+    (tstamp d6e2e216-815d-9d15-403b-c4f50f965315)
+    )
+  (fp_text value ">VALUE" (at 0.0 0.0 0.0) (layer F.SilkS) hide 
+    (effects (font (size 1.0 1.0) (thickness 0.10)) )
+    (tstamp 9fa60e90-3b61-6ccb-9999-74802a27da03)
+    ))

@@ -1,0 +1,39 @@
+(footprint LANDPATTERN_HEADER4 (version 20221018) (generator jitx) (layer F.Cu) (tstamp 67b3eed3-c03a-470c-2c04-98f661e01924)   
+  (pad 0 thru_hole circle
+    (at 0.0 0.0 0.0)
+    (size 1.5 1.5)
+    (drill 1.0)
+    (layers *.Cu )
+    (tstamp 6524c691-d391-5893-fa1f-091b5e483260))
+  (pad 1 thru_hole circle
+    (at 1.0 0.0 0.0)
+    (size 1.5 1.5)
+    (drill 1.0)
+    (layers *.Cu )
+    (tstamp 00c5d6c6-df7f-2e5c-8dc8-13bc639e1b2f))
+  (pad 2 thru_hole circle
+    (at 2.0 0.0 0.0)
+    (size 1.5 1.5)
+    (drill 1.0)
+    (layers *.Cu )
+    (tstamp dd2d29bb-024f-b02a-2139-2390b0533e37))
+  (pad 3 thru_hole circle
+    (at 3.0 0.0 0.0)
+    (size 1.5 1.5)
+    (drill 1.0)
+    (layers *.Cu )
+    (tstamp 6f0253a8-ce17-f10f-98b0-a91ad57ad4e6))
+  (pad 4 thru_hole circle
+    (at 4.0 0.0 0.0)
+    (size 1.5 1.5)
+    (drill 1.0)
+    (layers *.Cu )
+    (tstamp 3539428c-2f3d-74b7-f626-00e1d8d49a40))  
+  (fp_text reference ">REF" (at 0.0 0.0 0.0) (layer F.SilkS) hide 
+    (effects (font (size 1.0 1.0) (thickness 0.10)) )
+    (tstamp de03bfce-de06-2550-8553-ebccd584f13e)
+    )
+  (fp_text value ">VALUE" (at 0.0 0.0 0.0) (layer F.SilkS) hide 
+    (effects (font (size 1.0 1.0) (thickness 0.10)) )
+    (tstamp e1d1ef16-edf2-1d8c-7c53-bfaffcb0ec1d)
+    ))
