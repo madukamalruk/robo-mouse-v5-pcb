@@ -9,7 +9,7 @@
 
 > ⚠️ **PCB Outline (හැඩය) අලුතෙන් අඳින්නේ නැතුව, ඔරිජිනල් Gerber ෆයිල් එකෙන් import කරන්න!**
 
-**ෆයිල් location:** `obo-mouse-v4/PCB/gerbers/Gerber_BoardOutlineLayer.GKO`
+**ෆයිල් location:** මේ Github Repo එකේම තියෙන **`Gerber_BoardOutlineLayer.GKO`** ෆයිල් එක download කරගන්න.
 
 ### KiCad වලදී:
 1. PCB Editor එක open කරන්න.
