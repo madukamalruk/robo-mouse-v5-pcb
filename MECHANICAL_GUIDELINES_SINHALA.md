@@ -9,14 +9,19 @@
 
 **🚨 ඉතා වැදගත් (CRITICAL):**
 අලුත් upgrades (OLED, ToF) දැම්මට, **PCB එකේ මුල් හැඩය (Original Shape) සහ Dimensions කිසිම විදියකින් වෙනස් කරන්න එපා!** 
+රොබෝ එකේ Motor mounts සහ රෝද (wheels) මේ Size එකටම හදලා තියෙන නිසා මේක මිලිමීටරයක් හරි වෙනස් වුනොත් ප්‍රොජෙක්ට් එකම අවුල් යනවා.
 
-පරණ Obo-Mouse V4 එකේ CAD Design එකේ තිබුණු දිග, පළල, සහ Board Outline එකම හරියටම පාවිච්චි කරන්න. මොකද රොබෝ එකේ අනිත් mechanical කෑලි (Motor mounts, wheels) දැනටමත් ඒ size එකට හදලා තියෙන්නේ. ඒක මිලිමීටරයක් හරි වෙනස් වුනොත් මුළු ප්‍රොජෙක්ට් එකම අවුල් යනවා.
+**පරණ Obo-Mouse V4 එකේ හරියටම Dimensions මේවා තමයි:**
+* **උපරිම පළල (Max Width):** හරියටම `60.0 mm`
+* **උපරිම දිග (Max Length):** හරියටම `79.0 mm`
+* **රෝද සඳහා කපපු කොටස (Wheel Cutouts):** PCB එකේ දෙපැත්තෙන්ම 7mm ඇතුලට වෙන්න කපලා තියෙනවා (Y=7.9mm ඉඳන් Y=44.9mm වෙනකන් 37mm ක දිගට).
+* **ඉස්සරහා හැඩය (Nose Curve):** ඉස්සරහා පැත්ත රවුම් වෙලා ගිහින් අගින් 8mm ක flat edge එකක් තියෙනවා.
+
+**💡 Electronics Engineer ට ලේසිම ක්‍රමය (Pro Tip):**
+මේ සංකීර්ණ හැඩය අතින් අඳින්න මහන්සි වෙන්න එපා. අර පරණ `obo-mouse-v4/PCB/gerbers` ෆෝල්ඩර් එකේ තියෙන **`Gerber_BoardOutlineLayer.GKO`** ෆයිල් එක කෙලින්ම KiCad හෝ Altium එකට Import කරන්න (Edge.Cuts layer එක විදියට). එතකොට 100% ක් නිවැරදි ඔරිජිනල් හැඩය ඉබේම ඇඳෙනවා!
 
 **"අලුත් කෑලි දාන්න පරණ ඉඩ මදි වෙයිද?"**
-නැහැ, ඉඩ මදි වෙන්නේ නැහැ! අපි අලුත් PCB එක **4-Layer Stackup** එකකට upgrade කරලා තියෙන්නේ. Layer 2 (GND) සහ Layer 3 (Power) සම්පූර්ණයෙන්ම ඇතුලට යන නිසා, Top සහ Bottom layers දෙකේම components තියන්න සහ tracks අඳින්න ඕන තරම් ඉඩ තියෙනවා. ඒ නිසා ඔයාට පුළුවන්:
-* MCU එකයි, Motor Driver එකයි යට පැත්තට (Bottom layer) දාන්න.
-* OLED එකයි, අලුත් Buttons ටිකයි, ToF sensors ටිකයි උඩ පැත්තට (Top layer) දාන්න.
-* **ඔරිජිනල් Size එක ඇතුලෙම මේ ඔක්කොම ලස්සනට place කරන්න පුළුවන්!**
+නැහැ! අලුත් PCB එක **4-Layer Stackup** එකකට upgrade කරපු නිසා ඉඩ ඕන තරම් තියෙනවා. MCU එකයි, Motor Driver එකයි යට පැත්තට (Bottom layer) දාලා, OLED එකයි, ToF sensors ටිකයි උඩ පැත්තට (Top layer) දාලා ඔරිජිනල් Size එක ඇතුලෙම මේ ඔක්කොම ලස්සනට place කරන්න පුළුවන්.
 
 ---
 
