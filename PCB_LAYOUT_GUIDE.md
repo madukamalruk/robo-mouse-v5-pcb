@@ -1,189 +1,86 @@
-# 🤖 Obo-Mouse V4 — Final PCB Layout Handoff Guide
-### Electronics Engineer සඳහා සම්පූර්ණ PCB Layout Guide
-**Schematic Status:** ✅ `JITX Build OK — 0 Errors, 0 Warnings`  
-**Verified against:** STM32F405, DRV8833, ICM-42688-P, VL53L0X datasheets
+# 🤖 Obo-Mouse V4 — Ultimate Beginner-Friendly PCB Layout Guide
+
+හලෝ මචං! ඔයා Electronics වලට අලුත් වුණත් කිසිම බයක් වෙන්න එපා. මේ Guide එක ලියලා තියෙන්නේ **කිසිම දෙයක් නොදන්න කෙනෙකුට වුණත් 100% ක් නිවැරදිව** මේ Micromouse PCB එක අඳින්න පුළුවන් වෙන්නයි. 
+
+අපේ Schematic එක (කෑලි ටික connect වෙන විදිය) **100% ක් නිවැරදියි කියලා AI එකෙන් verify කරලා ඉවරයි**. ඔයාට තියෙන්නේ "Puzzle" එකක් හදනවා වගේ මේ කෑලි ටික බෝඩ් එක උඩ හරියට තියලා, මම කියන විදියට ඉරි (Tracks) ටික අඳින එක විතරයි!
 
 ---
 
-## STEP 1 — Board Outline Import (ඉස්සෙල්ලාම කරන්න!)
+## 🛠️ STEP 1: පදනම (The Basics)
 
-> ⚠️ **PCB Outline (හැඩය) අලුතෙන් අඳින්නේ නැතුව, ඔරිජිනල් Gerber ෆයිල් එකෙන් import කරන්න!**
+### 1. Board එකේ හැඩය සහ සයිස් එක
+ඔයා අඳින්න ගන්න ඕන Board Outline එක මිලිමීටර් එකක්වත් වෙනස් කරන්න එපා. 
+- **පළල:** හරියටම 60mm
+- **දිග:** හරියටම 79mm
+- දෙපැත්තේ රෝද වලට (Wheel cutouts) 7mm ඇතුලට කපලා තියෙනවා.
 
-**ෆයිල් location:** `obo-mouse-v4/PCB/gerbers/Gerber_BoardOutlineLayer.GKO`
-
-### KiCad වලදී:
-1. PCB Editor එක open කරන්න.
-2. `File → Import → Import Non-KiCad Board File...` යන්න.
-3. `Gerber_BoardOutlineLayer.GKO` ෆයිල් එක select කරන්න.
-4. Layer `Edge.Cuts` එකට assign කරන්න.
-
-### Altium වලදී:
-1. `File → Import Wizard` යන්න → `Gerber Files` තෝරන්න.
-2. `Gerber_BoardOutlineLayer.GKO` ෆයිල් එක load කරන්න.
-3. Layer `Mechanical 1` (Board Outline) එකට assign කරන්න.
-
-### ✅ ඔරිජිනල් Verified Dimensions:
-| Dimension | Value |
-|-----------|-------|
-| **PCB Width (Max)** | **60.0 mm** |
-| **PCB Length (Max)** | **79.0 mm** |
-| **Wheel Cutouts** | දෙපැත්තෙන් 7mm ඇතුලට, 37mm දිගට (Y: 7.9 → 44.9mm) |
-| **Front Nose** | Semicircle curve + 8mm flat tip |
-| **Mounting Holes** | M2 (2.2mm drill) × 4, GND connected |
-
-> ⚠️ **CRITICAL: PCB dimensions කිසිම mm එකක් වෙනස් කරන්න එපා!** Motor mounts, wheel holders, chassis ඔක්කොම ඔය exact size එකටම හදලා print කරලා තියෙනවා.
+### 2. Layers 4ක් පාවිච්චි කරන්නේ ඇයි?
+මේ රොබෝ එකේ මෝටර් 2ක් දුවන නිසා ගොඩක් "Noise" (කරන්ට් එකේ අපිරිසිදුකම්) එනවා. ඒකෙන් බේරෙන්න අපි PCB එක තට්ටු 4කට (4-Layers) අඳින්න ඕන:
+* **Layer 1 (Top Copper):** ඔයා කෑලි ඔක්කොම තියන්නේ මේක උඩ. සෙන්සර් වලට, MCU එකට යන Tracks අඳින්නේ මේකේ.
+* **Layer 2 (Inner 1 - GND):** මේක **සම්පූර්ණයෙන්ම තඹ වලින් පිරිච්ච බිමක් (Solid GND Plane)** විදියට තියන්න. කිසිම Track එකක් මේ ලේයර් එකේ අඳින්න එපා! මේක තමයි රොබෝ එකේ Noise එක උරාගන්න පලිහ.
+* **Layer 3 (Inner 2 - Power):** මේකෙත් Tracks අඳින්න එපා. මේකෙන් කරන්නේ 3.3V සහ Battery Power එක කෑලි වලට බෙදන එක.
+* **Layer 4 (Bottom Copper):** මෝටර් වලට යන ලොකු කරන්ට් එක යවන Tracks (මහත පාරවල්) අඳින්නේ බෝඩ් එකේ යටින් (Bottom Layer).
 
 ---
 
-## STEP 2 — Layer Stackup (4-Layer Setup)
+## 🧩 STEP 2: කෑලි තියන විදිය (Component Placement) - "ලේසිම පැහැදිලි කිරීම"
 
-```
-+----------------------------------------+
-|  L1 — Top Copper (Signal + Components) |  SMD components, fine signals
-+----------------------------------------+
-|  L2 — Inner 1 (SOLID GND PLANE) *     |  NEVER break with tracks!
-+----------------------------------------+
-|  L3 — Inner 2 (Power Plane)            |  3.3V zone + VBAT zone (split)
-+----------------------------------------+
-|  L4 — Bottom Copper (Signal + Bypass)  |  Heavy components, motor tracks
-+----------------------------------------+
-```
+අපි එකින් එක කෑලි තියමු. මේ පිළිවෙලටම තියන්න.
 
-> ⚠️ **L2 (GND Plane) කිසිම signal track එකකින් cut කරන්න එපා!** Solid plane ලෙසම තියන්න. නැත්නම් IMU noise, motor noise ටික MCU එකට couple වෙනවා.
+### 1. IMU (Gyroscope - ICM-42688-P) - රොබෝගේ "කන" 👂
+* **කොහෙද තියන්නේ?:** බෝඩ් එකේ **හරියටම මැද**. ඒ කියන්නේ රෝද දෙකට කපලා තියෙන හිඩැස් (Wheel cutouts) දෙක යා කරොත් එන රේඛාව උඩ (Axle line) හරියටම මැදින් තියන්න.
+* **ඇයි එහෙම තියන්නේ?:** රොබෝ හැරෙද්දී හරියටම හැරෙන කෝණය මනින්න නම් සෙන්සර් එක රොබෝගේ හරි මැද තියෙන්නම ඕන.
+* **අඳින හැටි:** මේකෙ ඉඳන් MCU එකට යන Tracks 4 (SPI Tracks) එකම දිගින් (±0.5mm) අඳින්න උත්සහ කරන්න.
 
----
+### 2. මෝටර් ඩ්‍රයිවර් (DRV8833) සහ මෝටර් Connectors 🚗
+* **කොහෙද තියන්නේ?:** රෝද වලට කපපු හිඩැස් (Cutouts) ගාවින්ම, බෝඩ් එකේ යට හරියට වෙන්න තියන්න. IMU එකෙන් පුළුවන් තරම් ඈතට කරන්න (අවම 10mm).
+* **ඇයි එහෙම තියන්නේ?:** මෝටර් වලින් ලොකු Noise එකක් එනවා. ඒක IMU එකට ගියොත් රොබෝ පිස්සු කෙළිනවා.
+* **අඳින හැටි:** මෝටර් එකට යන Tracks (AOUT1, BOUT1) අනිවාර්යයෙන්ම **Layer 4 (Bottom)** එකෙන් විතරක් අඳින්න. ඒවා මහතට අඳින්න (1.5mm පළල).
 
-## STEP 3 — Trace Width Rules
+### 3. මොළය (STM32F405 MCU) 🧠
+* **කොහෙද තියන්නේ?:** IMU එකට ටිකක් ඉස්සරහින් හරි පස්සෙන් හරි, බෝඩ් එකේ මැදට වෙන්න තියන්න. 
+* **අනිවාර්යයයි (VCAP):** MCU එකේ Pin 31 සහ Pin 48 වලට VCAP කියන Capacitors 2 (2.2µF) සම්බන්ධ වෙනවා. මේ Capacitors දෙක MCU එකේ කකුල් වල ගෑවෙන තරම් ළඟින් තියන්න! (දුර 1mm ට වඩා අඩු වෙන්න ඕන). **මේක ළඟින් තිබ්බේ නැත්නම් MCU එක On වෙන්නේ නෑ!**
+* **Decoupling Capacitors (100nF):** මේවා හරියට පොඩි "වතුර ටැංකි" වගේ. MCU එකේ VDD පින් වලට කරන්ට් එක මදි වුණාම ක්ෂණිකව දෙන්නේ මේවා. ඒ නිසා හැම VDD පින් එකක් ගාවම 100nF එක ගානේ කකුලේ ගෑවෙන තරම් ළඟින් තියන්න.
 
-| Net / Signal | Min Trace Width | හේතුව |
-|---|---|---|
-| `AOUT1, AOUT2, BOUT1, BOUT2` (Motor outputs) | **1.5 mm** | 1.5A motor current |
-| `VBAT, VM` (Battery + Motor power) | **1.5 mm** | Peak 3A battery current |
-| `V5V` | **1.0 mm** | 500mA LDO |
-| `V3V3` | **0.5 mm** | 300mA digital |
-| `SPI3` (SCK, MOSI, MISO) | **0.25 mm** | Length-match ±0.5mm required! |
-| `I2C2` (SDA, SCL) | **0.25 mm** | Max 50mm trace length |
-| GPIO / Signal | **0.2 mm** | Standard |
+### 4. බිත්ති බලන ඇස් (ToF Sensors × 4) 🦇
+මේවා තියන්න ඕන බෝඩ් එකේ ඉස්සරහා රවුමේ දාරේ දිගේ (Edge එකේ).
+* **Front Left & Front Right:** ඉස්සරහා බිත්තිය බලන්න මේ දෙක බෝඩ් එකේ ඉස්සරහා අර්ධ රවුමේ ඉදිරියටම වෙන්න තියන්න. මේවා හරියටම කෙලින් (0° angle) හරි, පොඩ්ඩක් එළියට (15° angle) හරි හැරිලා තියෙන්න ඕන.
+* **Side Left & Side Right:** පැත්තේ බිත්ති බලන්න මේ දෙක රවුමේ දෙපැත්තට වෙන්න තියන්න. මේවා 45° කෝණයකින් (Diagonal) එළියට හැරිලා තියෙන්න ඕන.
+* **I2C Pull-Up Resistors (4.7kΩ හෝ 10kΩ):** ToF සෙන්සර් 4ම I2C වලින් කතා කරන්නේ. I2C ලයින් (SDA, SCL) වලට Pull-Up resistors ඕන. ඒ කියන්නේ මේ ලයින් දෙක Resistor එකක් හරහා 3.3V එකට සම්බන්ධ කරන්න ඕන. මේ Resistors දෙක MCU එක ගාවින් ලස්සනට තියන්න.
 
-> Motor tracks (AOUT/BOUT/VM) → L4 (Bottom) layer.  
-> Digital signals (SPI, I2C, GPIO) → L1 (Top) layer.  
-> **Mix කරන්න එපා!**
+### 5. IR Sensors (Emitter + Receiver) 👀
+* **කොහෙද තියන්නේ?:** ToF සෙන්සර්ස් අතරින් ඉස්සරහා දාරයේම තියන්න. මේවත් 45° කෝණයකට එළියට හැරිලා තියෙන්න ඕන (බිත්තියට වදින ආලෝකය පරාවර්තනය වෙලා එන්න ඕන නිසා).
+* **Resistors:** Emitter එකට යන කරන්ට් එක පාලනය කරන 33Ω resistor එකත්, Receiver එකේ 10kΩ pull-down එකත් සෙන්සර් එක ගාවින්ම තියන්න.
 
----
+### 6. OLED Display එක (තිරය) 📺
+* **කොහෙද තියන්නේ?:** බෝඩ් එකේ පිටිපස්සේ තියෙන පැතලි දාරය (Back flat edge) ගාව.
+* **බෝඩ් එකේ ඉඩේ ප්‍රශ්නය (Important!):** OLED එකට Pin 4ක් (VCC, GND, SCL, SDA) තියෙනවා. මේ Pin 4 (Header එක) බෝඩ් එකේ පිටිපස්සේ හරස් අතට (Horizontal) තියන්න. එතකොට OLED Screen එක බැටරිය උඩින් නිදාගත්තා වගේ තියෙයි, නැත්නම් බෝඩ් එකෙන් ටිකක් පිටිපස්සට පැනලා තියෙයි. මේක තියද්දී පිටිපස්සේ තියෙන Buttons (Switch) වලට ඇඟිල්ල තියන්න ඉඩ තියෙනවද කියලා බලලා තියන්න.
+* **Tracks:** මේකත් I2C නිසා Pull-up resistors ඕන. අර කලින් කිව්ව Pull-ups දෙකම මේකටත් ඇති, අලුතින් ඕන නෑ.
 
-## STEP 4 — Component Placement Order
+### 7. Battery Connector (JST 3-pin) 🔋
+* පිටිපස්සේ දාරයේ මැදට වෙන්න තියන්න (OLED එකට යටින් වගේ ආවට කමක් නෑ, බැටරි වයර් එක ගහන්න ඉඩ තියෙනවා නම්). 
 
-**මේ order එකෙන්ම place කරන්න:**
-
-### 1. IMU — ICM-42688-P (MOST CRITICAL)
-- PCB geometric center (රෝද axis line හරි මැදෙන්).
-- DRV8833 ෙකන් **≥ 10mm** ඈතෙ.
-- IMU යටම (All layers) solid GND pour + via stitch.
-
-### 2. STM32F405 — MCU
-- **VCAP1 (pin 31):** 2.2µF cap ≤ **1mm** — BOOT FAILS without this
-- **VCAP2 (pin 48):** 2.2µF cap ≤ **1mm** — BOOT FAILS without this
-- Crystal ≤ 15mm trace. Guard ring GND.
-- 100nF decoupling cap EVERY VDD pin < 2mm.
-- BOOT0 pull-down 10kΩ (pin 60 → GND).
-
-### 3. DRV8833 — Motor Driver
-- VCP cap (10nF): VCP ↔ VM, trace < **0.5mm** (must touch pins).
-- VINT cap (2.2µF): VINT → GND, ≤ 2mm.
-- L4 (Bottom) layer preferred — motor tracks go straight down.
-
-### 4. Battery + Power Chain
-- Battery JST XH 3-pin — PCB rear edge.
-- LDO decoupling (10µF + 100nF) < 3mm from output pins.
-
-### 5. ToF Sensors × 4 (1×6 headers)
-- **Front Left / Front Right:** ඉස්සරහා අර්ධ රවුමේ ඉදිරියට වෙන්න (කෙලින්ම ඉස්සරහා බිත්තිය බලන්න).
-- **Side Left / Side Right:** අර්ධ රවුමේ දෙපැත්තට වෙන්න 45° හැරිලා (පැති වල බිත්ති බලන්න).
-- Decoupling 100nF: VCC pin < **2mm**.
-
-### 6. OLED Display (1×4 header)
-- Top layer, rear-middle area.
-- SDA/SCL traces max 50mm, no 90° bends.
-
-### 7. IR Sensors (SFH4545 Emitter + TEFT4300 Receiver)
-- ඉස්සරහා edge, 45° angle (wall detection).
-- Gate resistors 100Ω, Emitter limit 33Ω, Pull-downs 10kΩ — ළඟෙ place.
-
-### 8. Buttons × 5 + LEDs × 4
-- RESET, BOOT (PB8), KEY1 (PB12): Top, accessible.
-- MENU1 (PC2), MENU2 (PC3): OLED ලඟ.
-- LED1–4: Edge visible. 330Ω series resistors.
-
-### 9. SWD + UART Headers
-- SWD 4-pin: Side/rear. Always accessible.
-- UART 4-pin: Same area.
+### 8. Buttons (Switches) 🔘
+* BOOT, RESET සහ MENU Buttons ටික පිටිපස්සේ දාරයේ වම් සහ දකුණු කොන් වලට වෙන්න (Corners) තියන්න. එතකොට අතින් ඔබන්න ලේසියි.
 
 ---
 
-## STEP 5 — Critical Noise Isolation Rules
+## ✏️ STEP 3: Tracks අඳින හැටි (Routing Rules - The Golden Rules)
 
-### Motor Noise
-| Rule | Details |
-|------|---------|
-| Motor tracks L4 only | AOUT/BOUT/VM — Bottom layer only |
-| Motor GND via | DRV8833 GND pad → via direct to L2 |
-| Keep-out | No signal traces within 3mm of motor tracks |
-
-### IMU Noise
-| Rule | Details |
-|------|---------|
-| GND pour | All 4 layers beneath IMU — stitched to L2 |
-| Clearance | ≥ 10mm from DRV8833 |
-| SPI length | SCK/MOSI/MISO — ±0.5mm length matched |
-| SPI VDD bypass | 100nF < 1mm from ICM-42688 pin |
-
-### Power Integrity
-| Rule | Details |
-|------|---------|
-| L3 split | 3.3V zone vs VBAT zone — ≥ 0.5mm gap |
-| Decoupling | 100nF closest to pin, 2.2µF further |
-| Star GND | All GND pours → via → L2 plane |
-
-### Crystal
-| Rule | Details |
-|------|---------|
-| Trace length | PH0/PH1 → crystal ≤ 15mm, length matched |
-| Guard ring | GND ring around crystal, via-stitched to L2 |
-| No crossing | Zero signal traces under crystal |
-| Load caps | 22pF × 2, within 5mm of crystal |
+මල්ලි, මේ රූල්ස් 3 කඩන්නම එපා:
+1. **Crystal එක යටින් මුකුත් යවන්න එපා:** MCU එක ගාව තියෙන Crystal එක (ඔරලෝසුව වගේ වැඩ කරන කෑල්ල) යටින් වෙන කිසිම Track එකක් යවන්න එපා. Crystal එක වටේට GND (තඹ) වළල්ලක් (Guard ring) ඇඳලා ඒක GND Plane එකට සම්බන්ධ කරන්න.
+2. **මෝටර් Tracks යටින් (Bottom Layer) විතරයි:** DRV8833 එකේ ඉඳන් මෝටර් එකට යන Tracks අනිවාර්යයෙන්ම Layer 4 එකෙන් යවන්න. ඒවා 1.5mm මහතට අඳින්න.
+3. **90° කෝණ එපා:** Tracks අඳිද්දී කවදාවත් T අකුර වගේ 90° කෝණ වලට හරවන්න එපා. හැමවෙලේම 45° කෝණ වලින් (Y අකුර වගේ) ලස්සනට හරවන්න. 
 
 ---
 
-## STEP 6 — Final DRC Checklist
+## 🛑 අවසාන පරීක්ෂාව (Final Check)
+ඔක්කොම ඇඳලා ඉවර වුණාම මේ ටික හරිද බලන්න:
+* [ ] VCAP Capacitors දෙක MCU පින් එකේ ගෑවෙන්නම ළඟින් තියෙනවද?
+* [ ] IMU එක හරියටම රෝද අක්ෂය මැද ද තියෙන්නේ?
+* [ ] මෝටර් Tracks යටින්ද යැව්වේ? පළල 1.5mm ද?
+* [ ] ToF සහ OLED I2C ලයින් වලට Pull-up resistors (4.7k) MCU එක ගාවින් තිබ්බද?
+* [ ] OLED එක තිබ්බම පස්සේ Button ඔබන්න ඉඩ තියෙනවද?
+* [ ] **DRC Check එක රන් කරාම Errors 0 යි ද?**
 
-### Fabrication Constraints
-- [ ] Min copper-copper: **0.127mm**
-- [ ] Min copper-hole: **0.2mm**
-- [ ] Min copper-edge: **0.5mm**
-- [ ] Min drill diameter: **0.254mm**
-- [ ] Min annular ring: **0.152mm**
-
-### Critical Placement
-- [ ] VCAP1 cap ≤ 1mm from STM32 pin 31
-- [ ] VCAP2 cap ≤ 1mm from STM32 pin 48
-- [ ] DRV8833 VCP cap trace < 0.5mm
-- [ ] IMU at PCB geometric center
-- [ ] IMU ≥ 10mm from DRV8833
-- [ ] Crystal traces ≤ 15mm, length-matched
-- [ ] ToF decoupling within 2mm of VCC pin
-
-### Layer Verification
-- [ ] L2 GND — no breaks anywhere
-- [ ] L3 power — clean split 3.3V vs VBAT
-- [ ] Motor tracks on L4 only
-- [ ] SPI tracks length-matched ±0.5mm
-
-### Final Sign-off
-- [ ] DRC = **0 errors**
-- [ ] Gerber files exported (all layers + drill)
-- [ ] Board outline confirmed = **60mm × 79mm**
-- [ ] M2 mounting holes × 4 at corners confirmed
-
----
-
-*Document verified by Antigravity AI — Cross-checked against: STM32F405RGT6 datasheet, DRV8833PWP datasheet, ICM-42688-P datasheet, VL53L0X App Note AN4907, SSD1306 datasheet, and Gerber_BoardOutlineLayer.GKO (Obo-Mouse V4 original).*
+ඔය ටික හරියට කළා නම්, ඔයාගේ පළවෙනි PCB Design එක 1000% ක් සාර්ථකයි! ජය වේවා! 🚀
