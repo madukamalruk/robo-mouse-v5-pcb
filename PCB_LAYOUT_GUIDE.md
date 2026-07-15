@@ -9,7 +9,7 @@
 
 > ⚠️ **PCB Outline (හැඩය) අලුතෙන් අඳින්නේ නැතුව, ඔරිජිනල් Gerber ෆයිල් එකෙන් import කරන්න!**
 
-**ෆයිල් location:** මේ Github Repo එකේම තියෙන **`Gerber_BoardOutlineLayer.GKO`** ෆයිල් එක download කරගන්න.
+**ෆයිල් location:** `obo-mouse-v4/PCB/gerbers/Gerber_BoardOutlineLayer.GKO`
 
 ### KiCad වලදී:
 1. PCB Editor එක open කරන්න.
@@ -97,9 +97,8 @@
 - LDO decoupling (10µF + 100nF) < 3mm from output pins.
 
 ### 5. ToF Sensors × 4 (1×6 headers)
-- Front: ඉස්සරහා edge middle.
-- Left / Right: Side edges, 45° outward.
-- Rear: පස්සේ edge.
+- **Front Left / Front Right:** ඉස්සරහා අර්ධ රවුමේ ඉදිරියට වෙන්න (කෙලින්ම ඉස්සරහා බිත්තිය බලන්න).
+- **Side Left / Side Right:** අර්ධ රවුමේ දෙපැත්තට වෙන්න 45° හැරිලා (පැති වල බිත්ති බලන්න).
 - Decoupling 100nF: VCC pin < **2mm**.
 
 ### 6. OLED Display (1×4 header)
